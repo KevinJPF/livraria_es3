@@ -30,17 +30,16 @@ class MyApp extends StatelessWidget {
       home: ScreenUtilInit(
           designSize: designSize,
           child: ValueListenableBuilder(
-            valueListenable: Global.updatePage,
-            builder: (context, value, child) {
-              return Scaffold(
-                  body: Stack(
-                children: [
-                  HomePage(),
-                  TopMenu(),
-                ],
-              ));
-            }
-          )),
+              valueListenable: Global.updatePage,
+              builder: (context, value, child) {
+                return Scaffold(
+                    body: Stack(
+                  children: [
+                    HomePage(),
+                    TopMenu(),
+                  ],
+                ));
+              })),
     );
   }
 }

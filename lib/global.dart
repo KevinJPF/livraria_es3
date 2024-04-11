@@ -4,8 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Global {
   // Global Variables
   static bool isDarkTheme = true;
+  static bool menuExpanded = false;
   static ThemeColors themeColors = ThemeColors();
   static ValueNotifier<bool> updatePage = ValueNotifier(false);
+  static bool showBookList = false;
+  static bool showNewBook = false;
+  static bool showLogin = false;
 
   // Global Functions
   static void toggleTheme({bool toggle = true}) {
@@ -42,6 +46,9 @@ class ThemeColors {
   Color gray4 = _calculateColor('#6E6E6E', '#252525');
   Color gray5 = _calculateColor('#A4A4A4', '#1B1B1B');
   Color beige = _calculateColor('#E1EDC9', '#2D2010');
+  Color beige12 = _calculateColor('#E1EDC9', '#2D2010').withOpacity(0.12);
+  Color beige24 = _calculateColor('#E1EDC9', '#2D2010').withOpacity(0.24);
+  Color beige50 = _calculateColor('#E1EDC9', '#2D2010').withOpacity(0.5);
 }
 
 Color _calculateColor(String hexDark, String hexLight, {double opacity = 1.0}) {

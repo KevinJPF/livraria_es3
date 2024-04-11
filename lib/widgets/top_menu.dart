@@ -12,39 +12,51 @@ class TopMenu extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            // color: Colors.pink,
             padding: EdgeInsets.symmetric(vertical: setHeight(8)),
             child: Stack(
               children: [
-                // Side Menu Button
-                SideMenu(),
-                // Top Bar Title
-                Container(
-                  height: setHeight(50),
-                  alignment: Alignment.center,
-                  // color: Colors.blue,
-                  child: HighlightText(
-                    'LIVRARIA KJ LIVROS',
-                  ),
-                ),
-                // Theme Button
-                GestureDetector(
-                  onTap: () {
-                    Global.toggleTheme();
-                    Global.updatePage.value = !Global.updatePage.value;
-                  },
+                Expanded(
                   child: Container(
-                    margin: EdgeInsets.symmetric(horizontal: setWidth(16)),
-                    height: setHeight(50),
-                    alignment: Alignment.centerRight,
-                    // color: Colors.green,
-                    child: Icon(
-                      Global.isDarkTheme ? Icons.mode_night_sharp : Icons.light_mode_sharp,
-                      color: Global.themeColors.beige,
-                      size: setHeight(32),
+                    color: Global.themeColors.gray1,
+                    padding: EdgeInsets.symmetric(vertical: setHeight(8)),
+                    child: Stack(
+                      children: [
+                        // Top Bar Title
+                        Container(
+                          height: setHeight(50),
+                          alignment: Alignment.center,
+                          // color: Colors.blue,
+                          child: HighlightText(
+                            'LIVRARIA KJ LIVROS',
+                          ),
+                        ),
+                        // Theme Button
+                        GestureDetector(
+                          onTap: () {
+                            Global.toggleTheme();
+                            Global.updatePage.value = !Global.updatePage.value;
+                          },
+                          child: Container(
+                            margin:
+                                EdgeInsets.symmetric(horizontal: setWidth(16)),
+                            height: setHeight(50),
+                            alignment: Alignment.centerRight,
+                            // color: Colors.green,
+                            child: Icon(
+                              Global.isDarkTheme
+                                  ? Icons.mode_night_sharp
+                                  : Icons.light_mode_sharp,
+                              color: Global.themeColors.beige,
+                              size: setHeight(32),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
+                // Side Menu Button
+                SideMenu(),
               ],
             ),
           ),
